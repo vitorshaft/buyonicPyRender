@@ -39,9 +39,9 @@ async def consulta_maquina_02():
 async def rota_recebimento(request: Request):
     global valor_pix_maquina_1
     try:
-        ip = request.client.host
+        """ ip = request.client.host
         if ip != "34.193.116.226" and ip != "127.0.0.1": #if ip != "34.193.116.226":
-            raise HTTPException(status_code=401, detail="unauthorized")
+            raise HTTPException(status_code=401, detail="unauthorized") """
 
         EXPECTED_HMAC = WEBHOOK_SECRET
         #print(WEBHOOK_SECRET)
