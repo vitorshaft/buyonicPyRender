@@ -43,8 +43,8 @@ async def rota_recebimento(request: Request):
         if ip != "34.193.116.226" and ip != "127.0.0.1": #if ip != "34.193.116.226":
             raise HTTPException(status_code=401, detail="unauthorized")
 
-        EXPECTED_HMAC = "391baafb5d672aafc6eaaa83db10874cdd3360e9819d1a67e335028701fe53ff"
-
+        EXPECTED_HMAC = WEBHOOK_SECRET
+        #print(WEBHOOK_SECRET)
         qy = request.query_params.get("hmac")
         if qy != EXPECTED_HMAC:
             raise HTTPException(status_code=401, detail="unauthorized")
