@@ -67,26 +67,3 @@ async def rota_recebimento(request: Request):
     except Exception as e:
         print("Erro:", e)
         return JSONResponse(content={"error": f"error: {str(e)}"}, status_code=402)
-""" async def rota_recebimento(request: Request):
-    raw_body = await request.body()
-
-    signature_header = request.headers.get("x-hub-signature", "")
-
-    if signature_header.startswith("sha256="):
-        signature = signature_header[7:]
-    else:
-        signature = signature_header
-
-    expected_signature = hmac.new(
-        WEBHOOK_SECRET.encode(),
-        raw_body,
-        hashlib.sha256
-    ).hexdigest()
-
-    if not hmac.compare_digest(expected_signature, signature):
-        raise HTTPException(status_code=401, detail="Invalid signature")
-
-    body_json = await request.json()
-    print("Webhook recebido com sucesso:", body_json)
-
-    return {"ok": True} """
