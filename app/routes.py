@@ -57,7 +57,7 @@ async def rota_recebimento(request: Request):
             print(body["pix"][0]["valor"])
             txid = body["pix"][0]["txid"]
 
-            if txid == "V0CRTmog6XdUQtmhDFeoAAA":
+            if txid == "V0CRTmog6XdUQtmhDFeoAAB":
                 valor_pix_maquina_1 = body["pix"][0]["valor"]
                 print("Creditando valor do pix na máquina 1")
 
